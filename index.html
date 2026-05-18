@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FUN — the fun coin. 5x long HYPE on alt.fun</title>
+<meta name="description" content="$FUN — the fun coin. A 5x long HYPE position on alt.fun. HYPE +10% = $FUN +50%. No new buyers required.">
+
+<meta property="og:title" content="FUN — the fun coin. 5x long HYPE">
+<meta property="og:description" content="A meme of ALT on alt.fun. $FUN is a 5x long HYPE position. HYPE up 10%, $FUN up 50% — no new buyers needed.">
+<meta property="og:image" content="https://pbs.twimg.com/profile_images/2056114196618575872/5bJLw7Hx_400x400.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<style>
+  :root{
+    --yellow:#FFE14D;
+    --ink:#121212;
+    --coral:#FF5247;
+    --blue:#2A6DF4;
+    --white:#FFFFFF;
+    --shadow:6px 6px 0 var(--ink);
+    --shadow-sm:4px 4px 0 var(--ink);
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+
+  html,body{overflow-x:hidden}
+
+  body{
+    font-family:'Helvetica Neue',Arial,system-ui,sans-serif;
+    color:var(--ink);
+    background-color:var(--yellow);
+    background-image:radial-gradient(var(--ink) 1.4px, transparent 1.5px);
+    background-size:26px 26px;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  /* ---------- ticker tape ---------- */
+  .tape{
+    background:var(--ink);
+    border-bottom:3px solid var(--ink);
+    overflow:hidden;
+    white-space:nowrap;
+  }
+  .tape__track{
+    display:inline-block;
+    padding:11px 0;
+    animation:scroll 22s linear infinite;
+    will-change:transform;
+  }
+  .tape__track span{
+    color:var(--yellow);
+    font-weight:800;
+    font-size:.95rem;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    padding:0 26px;
+  }
+  .tape__track span b{color:var(--coral)}
+  @keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  @media (prefers-reduced-motion:reduce){.tape__track{animation:none}}
+
+  .wrap{max-width:880px;margin:0 auto;padding:46px 22px 0}
+
+  /* ---------- hero ---------- */
+  header{text-align:center;position:relative}
+
+  .coin-wrap{position:relative;display:inline-block;margin-bottom:14px}
+  .coin{
+    width:min(46vw,180px);height:min(46vw,180px);
+    border-radius:50%;
+    border:4px solid var(--ink);
+    box-shadow:var(--shadow);
+    object-fit:cover;display:block;
+    background:var(--white);
+    transform:rotate(-4deg);
+  }
+  .burst{
+    position:absolute;right:-26px;top:-22px;
+    width:96px;height:96px;
+    background:var(--coral);
+    color:var(--white);
+    display:grid;place-items:center;
+    font-weight:900;font-size:1.5rem;line-height:1;
+    border:3px solid var(--ink);
+    transform:rotate(13deg);
+    clip-path:polygon(50% 0,61% 18%,82% 12%,80% 34%,100% 44%,84% 58%,93% 80%,70% 78%,60% 99%,46% 80%,23% 88%,26% 64%,4% 56%,22% 40%,12% 18%,35% 22%,40% 3%);
+  }
+  .burst small{display:block;font-size:.62rem;letter-spacing:.12em;font-weight:800;margin-top:2px}
+
+  h1{
+    font-family:'Arial Black','Helvetica Neue',Arial,sans-serif;
+    font-size:clamp(4rem,22vw,9.5rem);
+    line-height:.82;
+    letter-spacing:-.04em;
+    -webkit-text-stroke:3px var(--ink);
+    color:var(--yellow);
+    text-shadow:7px 7px 0 var(--ink);
+    margin:6px 0 0;
+  }
+
+  .ticker-tag{
+    display:inline-block;margin-top:20px;
+    background:var(--ink);color:var(--yellow);
+    font-weight:900;font-size:1.15rem;letter-spacing:.05em;
+    padding:8px 22px;border:3px solid var(--ink);
+    transform:rotate(-2deg);
+  }
+
+  .lede{
+    margin:26px auto 0;max-width:540px;
+    font-size:1.12rem;font-weight:600;
+  }
+  .lede mark{background:var(--coral);color:var(--white);padding:1px 7px}
+
+  /* ---------- buttons ---------- */
+  .cta{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin:34px 0 0}
+  .btn{
+    display:inline-flex;align-items:center;gap:9px;
+    text-decoration:none;font-weight:800;font-size:1.05rem;
+    padding:15px 26px;
+    border:3px solid var(--ink);
+    background:var(--white);color:var(--ink);
+    box-shadow:var(--shadow-sm);
+    transition:transform .08s ease, box-shadow .08s ease;
+  }
+  .btn svg{width:19px;height:19px;fill:currentColor}
+  .btn:hover{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--ink)}
+  .btn:active{transform:translate(4px,4px);box-shadow:0 0 0 var(--ink)}
+  .btn--buy{background:var(--coral);color:var(--white);font-size:1.15rem;padding:16px 34px}
+  .btn--tg{background:var(--blue);color:var(--white)}
+
+  /* ---------- contract strip ---------- */
+  .ca{
+    margin:34px auto 0;max-width:560px;
+    background:var(--white);
+    border:3px solid var(--ink);
+    box-shadow:var(--shadow);
+    padding:16px 20px;text-align:center;
+    transform:rotate(.7deg);
+  }
+  .ca b{display:block;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase}
+  .ca .addr{
+    font-family:'Courier New',monospace;font-weight:800;
+    font-size:1.35rem;margin-top:6px;
+  }
+  .ca .note{font-size:.86rem;font-weight:600;margin-top:6px}
+  .ca .note a{color:var(--blue)}
+
+  /* ---------- section frame ---------- */
+  .panel{
+    margin:64px auto 0;max-width:880px;
+    background:var(--white);
+    border:3px solid var(--ink);
+    box-shadow:8px 8px 0 var(--ink);
+    padding:38px 30px;
+  }
+  .panel--coral{background:var(--coral);color:var(--white)}
+  .tag-h{
+    display:inline-block;
+    background:var(--ink);color:var(--yellow);
+    font-weight:900;font-size:.78rem;letter-spacing:.2em;
+    text-transform:uppercase;padding:6px 14px;
+    transform:rotate(-1.5deg);
+  }
+  .panel--coral .tag-h{background:var(--white);color:var(--coral)}
+  .panel h2{
+    font-family:'Arial Black',Arial,sans-serif;
+    font-size:clamp(1.8rem,6vw,2.8rem);
+    line-height:1;margin:16px 0 18px;letter-spacing:-.02em;
+  }
+  .panel p{font-size:1.1rem;font-weight:500;max-width:620px}
+  .panel p strong{background:var(--yellow);color:var(--ink);padding:1px 6px}
+  .panel--coral p strong{background:var(--ink);color:var(--white)}
+
+  /* ---------- mechanic tiles ---------- */
+  .tiles{
+    margin-top:26px;
+    display:grid;grid-template-columns:repeat(2,1fr);gap:18px;
+  }
+  .tile{
+    border:3px solid var(--ink);
+    background:var(--white);color:var(--ink);
+    padding:20px 18px;text-align:center;
+    box-shadow:var(--shadow-sm);
+  }
+  .tile:nth-child(1){transform:rotate(-1.5deg)}
+  .tile:nth-child(2){transform:rotate(1.5deg)}
+  .tile:nth-child(3){transform:rotate(1.5deg)}
+  .tile:nth-child(4){transform:rotate(-1.5deg)}
+  .tile .in{font-weight:800;font-size:1rem;text-transform:uppercase;letter-spacing:.06em}
+  .tile .out{
+    font-family:'Arial Black',Arial,sans-serif;
+    font-size:2rem;line-height:1;margin-top:8px;
+  }
+  .tile--best{background:var(--ink);color:var(--yellow)}
+  .tile--best .out{color:var(--yellow)}
+  .tile--best .flag{
+    display:inline-block;margin-top:8px;
+    background:var(--coral);color:var(--white);
+    font-size:.66rem;font-weight:900;letter-spacing:.14em;
+    padding:3px 9px;
+  }
+
+  /* ---------- buy panel ---------- */
+  .panel--coral .cta{margin-top:24px}
+  .panel--coral .btn{border-color:var(--white);box-shadow:5px 5px 0 var(--white)}
+  .panel--coral .btn:hover{box-shadow:2px 2px 0 var(--white)}
+  .panel--coral .btn--buy{background:var(--ink);color:var(--white)}
+  .panel--coral .btn--tg{background:var(--white);color:var(--blue)}
+  .panel--coral .btn--x{background:var(--white);color:var(--ink)}
+
+  /* ---------- footer ---------- */
+  footer{
+    margin-top:64px;
+    background:var(--ink);color:var(--yellow);
+    border-top:3px solid var(--ink);
+    padding:34px 22px 40px;text-align:center;
+  }
+  .f-links{display:flex;flex-wrap:wrap;gap:8px 22px;justify-content:center;font-weight:800}
+  .f-links a{color:var(--yellow);text-decoration:none;border-bottom:2px solid var(--coral)}
+  .f-links a:hover{color:var(--white)}
+  .disclaimer{
+    margin:18px auto 0;max-width:640px;
+    font-size:.8rem;font-weight:500;color:#cfcfcf;line-height:1.6;
+  }
+
+  @media (max-width:560px){
+    .tiles{grid-template-columns:1fr}
+    .tile,.tile:nth-child(n){transform:none}
+    .burst{width:78px;height:78px;right:-10px;font-size:1.2rem}
+    h1{text-shadow:5px 5px 0 var(--ink);-webkit-text-stroke:2px var(--ink)}
+  }
+</style>
+</head>
+<body>
+
+  <div class="tape" aria-hidden="true">
+    <div class="tape__track">
+      <span>$FUN ✦ THE FUN COIN ✦ <b>5X LONG HYPE</b> ✦ A MEME OF ALT ON ALT.FUN ✦ NO BUYERS NEEDED ✦&nbsp;</span>
+      <span>$FUN ✦ THE FUN COIN ✦ <b>5X LONG HYPE</b> ✦ A MEME OF ALT ON ALT.FUN ✦ NO BUYERS NEEDED ✦&nbsp;</span>
+    </div>
+  </div>
+
+  <div class="wrap">
+
+    <header>
+      <div class="coin-wrap">
+        <img class="coin" src="https://pbs.twimg.com/profile_images/2056114196618575872/5bJLw7Hx_400x400.jpg" alt="$FUN — the fun coin">
+        <div class="burst">5×<small>HYPE</small></div>
+      </div>
+      <h1>FUN</h1>
+      <div class="ticker-tag">$FUN</div>
+      <p class="lede">
+        The fun coin. A meme of ALT on alt.fun, levered <mark>5x long HYPE</mark>.
+        It doesn't need buyers — it needs HYPE up.
+      </p>
+
+      <div class="cta">
+        <a class="btn btn--buy" href="#" rel="noopener">Buy $FUN</a>
+        <a class="btn btn--x" href="https://x.com/funcoinalt" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          @funcoinalt
+        </a>
+        <a class="btn btn--tg" href="https://t.me/funcoinalt" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.27 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"/></svg>
+          Telegram
+        </a>
+      </div>
+
+      <div class="ca">
+        <b>Contract Address</b>
+        <div class="addr">Coming&nbsp;soon</div>
+        <div class="note">Drops soon — watch <a href="https://x.com/funcoinalt" target="_blank" rel="noopener">@funcoinalt</a></div>
+      </div>
+    </header>
+
+    <section class="panel">
+      <span class="tag-h">The Idea</span>
+      <h2>Just the fun coin.</h2>
+      <p>
+        ALT on alt.fun made levered tokens a meme. <strong>$FUN is that same energy</strong> —
+        no roadmap, no utility, no committee. A 5x long HYPE position in a fun costume.
+      </p>
+    </section>
+
+    <section class="panel">
+      <span class="tag-h">The Mechanic</span>
+      <h2>HYPE moves → $FUN moves ×5</h2>
+      <p>
+        Every other memecoin needs the next buyer or you're the exit. <strong>$FUN doesn't.</strong>
+        On alt.fun it's a 5x long HYPE position. It tracks HYPE, times five.
+      </p>
+      <div class="tiles">
+        <div class="tile">
+          <div class="in">HYPE +2%</div>
+          <div class="out">$FUN +10%</div>
+        </div>
+        <div class="tile">
+          <div class="in">HYPE +5%</div>
+          <div class="out">$FUN +25%</div>
+        </div>
+        <div class="tile tile--best">
+          <div class="in">HYPE +10%</div>
+          <div class="out">$FUN +50%</div>
+          <span class="flag">NO BUYERS NEEDED</span>
+        </div>
+        <div class="tile">
+          <div class="in">HYPE +20%</div>
+          <div class="out">$FUN +100%</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel panel--coral">
+      <span class="tag-h">The Ask</span>
+      <h2>Buy $FUN.</h2>
+      <p>It's on alt.fun. Two clicks. Then go have fun.</p>
+      <div class="cta">
+        <a class="btn btn--buy" href="#" rel="noopener">Buy $FUN</a>
+        <a class="btn btn--x" href="https://x.com/funcoinalt" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          @funcoinalt
+        </a>
+        <a class="btn btn--tg" href="https://t.me/funcoinalt" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.27 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"/></svg>
+          Telegram
+        </a>
+      </div>
+    </section>
+
+  </div>
+
+  <footer>
+    <div class="f-links">
+      <a href="https://alt.fun" target="_blank" rel="noopener">alt.fun</a>
+      <a href="https://x.com/funcoinalt" target="_blank" rel="noopener">@funcoinalt</a>
+      <a href="https://t.me/funcoinalt" target="_blank" rel="noopener">Telegram</a>
+    </div>
+    <p class="disclaimer">
+      $FUN is an unofficial community meme. Not affiliated with or endorsed by alt.fun,
+      Hyperliquid, or the HYPE token. Leveraged tokens amplify losses as well as gains and
+      can be liquidated to zero. Not financial advice. DYOR. Don't bet rent.
+    </p>
+  </footer>
+
+</body>
+</html>
